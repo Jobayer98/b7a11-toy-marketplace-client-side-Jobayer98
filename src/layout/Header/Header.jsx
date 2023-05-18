@@ -10,7 +10,7 @@ import Dropdown from "../../components/Dropdown/Dropdown";
 const Header = () => {
   return (
     <header className="text-decoration-none">
-      <Navbar bg="light" expand="md">
+      <Navbar bg="light" expand="lg">
         <Container>
           <Navbar.Brand>
             <Link to="/" className="text-decoration-none">
@@ -19,9 +19,11 @@ const Header = () => {
           </Navbar.Brand>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <NavItem path={"/"}>Home</NavItem>
+          <Navbar.Collapse
+            id="basic-navbar-nav"
+            className="justify-content-end"
+          >
+            <Nav>
               <NavItem path={"/all-toys"}>AllToys</NavItem>
               <NavItem path={"/my-toys"}>MyToys</NavItem>
               <NavItem path={"/add-toy"}>AddToy</NavItem>
