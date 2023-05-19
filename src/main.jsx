@@ -13,6 +13,7 @@ import LoginPage from "./pages/Login";
 import SignUpPage from "./pages/SignUp";
 import AboutPage from "./pages/About";
 import AuthProvider from "./context/authProvider";
+import PrivateRoute from "./routes/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -29,11 +30,19 @@ const router = createBrowserRouter([
       },
       {
         path: "my-toys",
-        element: <MyToysPage />,
+        element: (
+          <PrivateRoute>
+            <MyToysPage />
+          </PrivateRoute>
+        ),
       },
       {
         path: "add-toy",
-        element: <AddToyPage />,
+        element: (
+          <PrivateRoute>
+            <AddToyPage />
+          </PrivateRoute>
+        ),
       },
       {
         path: "blogs",
