@@ -1,97 +1,123 @@
-import NavItem from "../../components/NavItem/NavItem";
-import { BsFacebook } from "react-icons/bs";
-import {
-  MDBFooter,
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBIcon,
-} from "mdb-react-ui-kit";
+// import NavItem from "../../components/NavItem/NavItem";
 
 const Footer = () => {
   return (
-    <footer className="mt-4">
-      <MDBFooter
-        bgColor="dark"
-        className="text-center text-lg-start text-muted"
-      >
-        <section>
-          <MDBContainer className="text-center text-md-start pt-5">
-            <MDBRow className="mt-3">
-              <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">
-                <h6 className="text-uppercase fw-bold mb-4">
-                  <MDBIcon color="secondary" icon="gem" className="me-3" />
-                  ToyLand
-                </h6>
-                <p>
-                  Here you can use rows and columns to organize your footer
-                  content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit.
-                </p>
-              </MDBCol>
-
-              <MDBCol md="2" lg="2" xl="2" className="mx-auto mb-4">
-                <h6 className="text-uppercase fw-bold mb-4">Products</h6>
-                <p>
-                  <a href="#!" className="text-reset">
-                    Angular
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset">
-                    React
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset">
-                    Vue
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset">
-                    Laravel
-                  </a>
-                </p>
-              </MDBCol>
-
-              <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
-                <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
-                <NavItem className="text-reset" path="/">
-                  Home
-                </NavItem>
-                <NavItem className="text-reset" path="/all-toys">
-                  AllToys
-                </NavItem>
-                <NavItem className="text-reset" path="/my-toys">
-                  MyToys
-                </NavItem>
-                <NavItem className="text-reset" path="/add-toy">
-                  AddToy
-                </NavItem>
-                <NavItem className="text-reset" path="/blogs">
-                  Blogs
-                </NavItem>
-                <NavItem className="text-reset" path="/about">
-                  About
-                </NavItem>
-              </MDBCol>
-
-              <MDBCol md="4" lg="3" xl="3" className="mx-auto mb-md-0 mb-4">
-                <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
-                <BsFacebook className="fs-2" />
-              </MDBCol>
-            </MDBRow>
-          </MDBContainer>
-        </section>
-
-        <div
-          className="text-center p-4 d-flex justify-content-center"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
-        >
-          © 2023 Copyright:
-          <p>ToyLand.com</p>
+    <footer className="bg-dark px-5 py-3 w-100 m-0">
+      <div className="row">
+        <div className="col-2 text">
+          <h5>Section</h5>
+          <ul className="nav flex-column">
+            <li className="nav-item mb-2">
+              <a href="#" className="nav-link p-0 text-muted">
+                Home
+              </a>
+            </li>
+            <li className="nav-item mb-2">
+              <a href="#" className="nav-link p-0 text-muted">
+                Features
+              </a>
+            </li>
+            <li className="nav-item mb-2">
+              <a href="#" className="nav-link p-0 text-muted">
+                Pricing
+              </a>
+            </li>
+            <li className="nav-item mb-2">
+              <a href="#" className="nav-link p-0 text-muted">
+                FAQs
+              </a>
+            </li>
+            <li className="nav-item mb-2">
+              <a href="#" className="nav-link p-0 text-muted">
+                About
+              </a>
+            </li>
+          </ul>
         </div>
-      </MDBFooter>
+
+        <div className="col-2">
+          <h5>Section</h5>
+          <ul className="nav flex-column">
+            <li className="nav-item mb-2">
+              <a href="#" className="nav-link p-0 text-muted">
+                Home
+              </a>
+            </li>
+            <li className="nav-item mb-2">
+              <a href="#" className="nav-link p-0 text-muted">
+                Features
+              </a>
+            </li>
+            <li className="nav-item mb-2">
+              <a href="#" className="nav-link p-0 text-muted">
+                Pricing
+              </a>
+            </li>
+            <li className="nav-item mb-2">
+              <a href="#" className="nav-link p-0 text-muted">
+                FAQs
+              </a>
+            </li>
+            <li className="nav-item mb-2">
+              <a href="#" className="nav-link p-0 text-muted">
+                About
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="col-2">
+          <h5>Section</h5>
+          <ul className="nav flex-column">
+            <li className="nav-item mb-2">
+              <a href="#" className="nav-link p-0 text-muted">
+                Home
+              </a>
+            </li>
+            <li className="nav-item mb-2">
+              <a href="#" className="nav-link p-0 text-muted">
+                Features
+              </a>
+            </li>
+            <li className="nav-item mb-2">
+              <a href="#" className="nav-link p-0 text-muted">
+                Pricing
+              </a>
+            </li>
+            <li className="nav-item mb-2">
+              <a href="#" className="nav-link p-0 text-muted">
+                FAQs
+              </a>
+            </li>
+            <li className="nav-item mb-2">
+              <a href="#" className="nav-link p-0 text-muted">
+                About
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="col-4 offset-1">
+          <form>
+            <h5>Subscribe to our newsletter</h5>
+            <p>Monthly digest of whats new and exciting from us.</p>
+            <div className="d-flex w-100 gap-2">
+              <label htmlFor="newsletter1" className="visually-hidden">
+                Email address
+              </label>
+              <input
+                id="newsletter1"
+                type="text"
+                className="form-control"
+                placeholder="Email address"
+              />
+              <button className="btn btn-primary" type="button">
+                Subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
     </footer>
   );
 };
