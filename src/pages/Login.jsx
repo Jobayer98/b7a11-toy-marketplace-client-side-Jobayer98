@@ -1,4 +1,15 @@
+import { useContext, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import AuthContext from "../context/authContext";
+
 const LoginPage = () => {
+  const [error, setError] = useState(false);
+  const { login, loginInWithGoogle } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -6,6 +17,20 @@ const LoginPage = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
+
+    login(email, password)
+      .then(() => {
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(true);
+      });
+  };
+
+  const handleGoogle = () => {
+    loginInWithGoogle();
+    navigate(from, { replace: true });
   };
   return (
     <section className="vh-80 w-75 mx-auto">
@@ -13,6 +38,7 @@ const LoginPage = () => {
         <div className="row d-flex align-items-center justify-content-center h-100">
           <div className="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
             <h2 className="mb-4">Login</h2>
+            {error && <p>Failed Login. Invalid Email or Password</p>}
 
             <form onSubmit={handleSubmit}>
               <div className="form-outline mb-4">
@@ -46,7 +72,11 @@ const LoginPage = () => {
                 Log in
               </button>
             </form>
-            <button type="submit" className="btn btn-primary btn-lg btn-block">
+            <button
+              onClick={handleGoogle}
+              type="submit"
+              className="btn btn-primary btn-lg btn-block"
+            >
               Log in With Google
             </button>
           </div>
