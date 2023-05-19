@@ -9,7 +9,7 @@ const NavItem = ({ children, path, className }) => {
     <NavLink
       to={path}
       id="navItem"
-      className={`"text-decoration-none " + ${className}`}
+      className={`"text-decoration-none " + ${className || ""}`}
     >
       {children}
     </NavLink>
