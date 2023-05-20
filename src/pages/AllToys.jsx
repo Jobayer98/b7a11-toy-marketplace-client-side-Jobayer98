@@ -36,8 +36,7 @@ const AllToysPage = () => {
         <div className="overflow-x-auto mx-24">
           <table className="table table-zebra w-full">
             <caption className="caption-top mx-auto w-52 text-2xl my-4">
-              Available All Toys
-              {toys.length}
+              Available Toys
             </caption>
             <thead className="bg-gray-300">
               <tr>
