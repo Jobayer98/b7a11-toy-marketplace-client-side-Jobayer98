@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./index.css";
 import Root from "./layout/Root";
-import HomePage from "./pages/Home";
+import HomePage from "./pages/Home/Home";
 import AllToysPage from "./pages/AllToys";
 import MyToysPage from "./pages/MyToys";
 import AddToyPage from "./pages/AddToy";

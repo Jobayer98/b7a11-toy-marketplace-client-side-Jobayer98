@@ -1,5 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 #root {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background-color: #f2f4f8;
 }
