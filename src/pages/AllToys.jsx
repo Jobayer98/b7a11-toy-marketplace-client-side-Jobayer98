@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import TableRow from "../components/AllToy/TableRow";
+import { useLoaderData } from "react-router-dom";
 
 const AllToysPage = () => {
   const [toys, setToy] = useState([]);
+  const { totalToy } = useLoaderData();
+  console.log(totalToy);
 
   useEffect(() => {
     fetch("https://b7a11-toy-marketplace-server-side-jobayer98.vercel.app/toys")
