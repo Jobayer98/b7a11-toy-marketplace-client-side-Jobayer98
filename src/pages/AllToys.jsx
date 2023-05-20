@@ -30,7 +30,7 @@ const AllToysPage = () => {
     <>
       {loading ? (
         <span className="flex justify-center items-center h-[80vh]">
-          <Spinner animation="border" variant="warning" />
+          <Spinner animation="border" variant="primary" />
         </span>
       ) : (
         <div className="overflow-x-auto mx-24">

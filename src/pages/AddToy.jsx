@@ -1,5 +1,11 @@
+import NewToy from "../components/AddToy/NewToy";
+
 const AddToyPage = () => {
-  return <div>AddToysPage</div>;
+  return (
+    <>
+      <NewToy />
+    </>
+  );
 };
 
 export default AddToyPage;
