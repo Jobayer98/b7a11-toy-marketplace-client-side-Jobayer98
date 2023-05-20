@@ -3,7 +3,6 @@ import { useLoaderData } from "react-router-dom";
 const Details = () => {
   const toyDetails = useLoaderData();
   const seller_name = toyDetails.user_email?.split("@")[0];
-  console.log(toyDetails);
 
   return (
     <>

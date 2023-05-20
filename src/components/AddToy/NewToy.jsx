@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { useFormik } from "formik";
 import "./NewToy.css";
 
@@ -190,7 +190,6 @@ const NewToy = () => {
           </button>
         </div>
       </form>
-      <Toaster />
     </div>
   );
 };

@@ -4,6 +4,9 @@ import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import AuthContext from "../context/authContext";
 import logo from "../assets/logo.png";
+import { toast } from "react-hot-toast";
+
+const notify = () => toast.success("Register Successfuly");
 
 const LoginPage = () => {
   const [error, setError] = useState(false);
@@ -23,6 +26,7 @@ const LoginPage = () => {
 
     login(email, password)
       .then(() => {
+        notify();
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -37,9 +41,10 @@ const LoginPage = () => {
   };
   return (
     <section>
-      {error && <p>Failed to login</p>}
       <div className="py-16 bg-gradient-to-br from-sky-50 to-gray-200">
-        <div className=" flex flex-col  px-6 text-gray-500  mx-auto w-full lg:w-[40%] rounded-xl bg-white shadow-xl">
+        <div className=" flex flex-col  px-6 text-gray-500  mx-auto w-full md:w-[60%] lg:w-[40%] rounded-xl bg-white shadow-xl">
+          {error && <p className="text-red-500">Failed to login</p>}
+
           <div className="mt-4 p-2 sm:p-16 mx-auto">
             <img
               src={logo}
@@ -76,7 +81,7 @@ const LoginPage = () => {
 
               <div className="mt-8 grid">
                 <button
-                  onClick={handleGoogle}
+                  onClick={handleSubmit}
                   className="w-full h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300 
  hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100 hover:text-blue-400"
                 >

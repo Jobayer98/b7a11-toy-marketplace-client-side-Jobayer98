@@ -1,5 +1,10 @@
+import MyToys from "../components/MyToys/MyToys";
 const MyToysPage = () => {
-  return <div>MyToysPage</div>;
+  return (
+    <>
+      <MyToys />
+    </>
+  );
 };
 
 export default MyToysPage;
