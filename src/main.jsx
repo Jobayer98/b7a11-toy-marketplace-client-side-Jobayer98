@@ -14,6 +14,7 @@ import SignUpPage from "./pages/SignUp";
 import AboutPage from "./pages/About";
 import AuthProvider from "./context/authProvider";
 import PrivateRoute from "./routes/PrivateRoute";
+import Details from "./components/AllToy/ToyDetails/Details";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,18 @@ const router = createBrowserRouter([
         loader: () =>
           fetch(
             "https://b7a11-toy-marketplace-server-side-jobayer98.vercel.app/total-toy"
+          ),
+      },
+      {
+        path: "toys/:toyId",
+        element: (
+          <PrivateRoute>
+            <Details />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://b7a11-toy-marketplace-server-side-jobayer98.vercel.app/toys/${params.toyId}`
           ),
       },
       {
