@@ -26,6 +26,10 @@ const AllToysPage = () => {
       .catch((e) => console.log(e));
   }, [currentPage]);
 
+  useEffect(() => {
+    document.title = "ToyLand | AllToys";
+  }, []);
+
   return (
     <>
       {loading ? (

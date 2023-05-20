@@ -15,7 +15,9 @@ const AllToysPage = () => {
   const { user } = useContext(AuthContext);
   const { email } = user;
   useEffect(() => {
-    fetch(`http://localhost:3000/toys?email=${email}`)
+    fetch(
+      `https://b7a11-toy-marketplace-server-side-jobayer98.vercel.app/toys?email=${email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setLoading(false);
@@ -28,9 +30,12 @@ const AllToysPage = () => {
     Swal.fire("Are you want to delete it?");
     console.log(id);
 
-    fetch(`http://localhost:3000/toys/${id}`, {
-      method: "DELETE",
-    })
+    fetch(
+      `https://b7a11-toy-marketplace-server-side-jobayer98.vercel.app/toys${id}`,
+      {
+        method: "DELETE",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         const remaining = toys.filter((toy) => toy._id !== id);

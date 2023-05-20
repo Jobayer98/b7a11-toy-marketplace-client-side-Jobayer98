@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import AuthContext from "../context/authContext";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
@@ -36,6 +36,10 @@ const SignUpPage = () => {
         setMsg(e.message);
       });
   };
+
+  useEffect(() => {
+    document.title = "ToyLand | SignUp";
+  }, []);
 
   return (
     <section>

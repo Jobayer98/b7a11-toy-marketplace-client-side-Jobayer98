@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
@@ -39,6 +39,11 @@ const LoginPage = () => {
     loginInWithGoogle();
     navigate(from, { replace: true });
   };
+
+  useEffect(() => {
+    document.title = "ToyLand | Login";
+  }, []);
+
   return (
     <section>
       <div className="py-16 bg-gradient-to-br from-sky-50 to-gray-200">
