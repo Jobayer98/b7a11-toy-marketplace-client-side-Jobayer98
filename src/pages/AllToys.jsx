@@ -1,19 +1,25 @@
 import { useEffect, useState } from "react";
 import TableRow from "../components/AllToy/TableRow";
 import { useLoaderData } from "react-router-dom";
+import Pagination from "react-bootstrap/Pagination";
 
 const AllToysPage = () => {
   const [toys, setToy] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
   const { totalToy } = useLoaderData();
-  console.log(totalToy);
+
+  const perPage = 20;
+  const totalPages = Math.ceil(totalToy / perPage);
+  const pageNumbers = [...Array(totalPages).keys()];
 
   useEffect(() => {
-    fetch("https://b7a11-toy-marketplace-server-side-jobayer98.vercel.app/toys")
+    fetch(`http://localhost:3000/toys?page=${currentPage}&limit=${perPage}`)
       .then((res) => res.json())
       .then((data) => {
         setToy(data);
       });
-  }, []);
+  }, [currentPage]);
+
   return (
     <div className="overflow-x-auto mx-24">
       <table className="table table-zebra w-full">
@@ -36,6 +42,20 @@ const AllToysPage = () => {
           ))}
         </tbody>
       </table>
+      <div className="flex justify-center items-center mt-4">
+        <Pagination className="mb-3">
+          <Pagination.Prev />
+          {pageNumbers.map((page) => (
+            <Pagination.Item
+              key={page}
+              onClick={() => setCurrentPage(page + 1)}
+            >
+              {page + 1}
+            </Pagination.Item>
+          ))}
+          <Pagination.Next />
+        </Pagination>
+      </div>
     </div>
   );
 };
