@@ -17,7 +17,7 @@ const ReactTab = () => {
 
   return (
     <>
-      <Tabs className="flex flex-col items-center mb-12">
+      <Tabs className="flex flex-col items-center mt-12 mb-12">
         <h1 className="text-4xl text-orange-500 font-semibold my-8">
           Shop by category
         </h1>
@@ -73,6 +73,16 @@ const ReactTab = () => {
         </TabList>
 
         <TabPanel className="p-4 flex gap-4">
+          {toys.map((toy) => (
+            <Card key={toy._id} toy={toy} />
+          ))}
+        </TabPanel>
+        <TabPanel className="flex gap-4">
+          {toys.map((toy) => (
+            <Card key={toy._id} toy={toy} />
+          ))}
+        </TabPanel>
+        <TabPanel className="flex gap-4">
           {toys.map((toy) => (
             <Card key={toy._id} toy={toy} />
           ))}
