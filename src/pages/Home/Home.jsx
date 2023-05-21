@@ -1,11 +1,12 @@
+import Gallery from "../../components/Gallery/Gallery";
 import HeroSection from "../../components/HeroSection/HeroSection";
-// import Card from "../../components/UI/Card/Card";
-// import classes from "./Home.module.css";
+import ReactTab from "../../components/Tab/Tab";
 const HomePage = () => {
   return (
     <div>
       <HeroSection />
-      {/* <section className={classes.card_section}><Card /></section> */}
+      <Gallery />
+      <ReactTab />
     </div>
   );
 };
