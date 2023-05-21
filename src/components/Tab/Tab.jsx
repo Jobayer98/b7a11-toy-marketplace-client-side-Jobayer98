@@ -18,13 +18,15 @@ const ReactTab = () => {
   return (
     <>
       <Tabs className="flex flex-col items-center mb-12">
-        <h1 className="text-4xl font-semibold my-8">Shop by category</h1>
+        <h1 className="text-4xl text-orange-500 font-semibold my-8">
+          Shop by category
+        </h1>
         <TabList className="tab flex justify-center cursor-pointer">
           <Tab
             onClick={() => {
               handleClick("math");
             }}
-            className="tab tab-lg  tab-lifted"
+            className="tab tab-lg  tab-lifted hover:text-orange-400"
           >
             Math
           </Tab>
@@ -32,15 +34,31 @@ const ReactTab = () => {
             onClick={() => {
               handleClick("physics");
             }}
-            className="tab tab-lg  tab-lifted"
+            className="tab tab-lg  tab-lifted hover:text-orange-400"
           >
             Physics
           </Tab>
           <Tab
             onClick={() => {
+              handleClick("chemistry");
+            }}
+            className="tab tab-lg  tab-lifted hover:text-orange-400"
+          >
+            Chemistry
+          </Tab>
+          <Tab
+            onClick={() => {
+              handleClick("biology");
+            }}
+            className="tab tab-lg  tab-lifted hover:text-orange-400"
+          >
+            Biology
+          </Tab>
+          <Tab
+            onClick={() => {
               handleClick("medical");
             }}
-            className="tab tab-lg  tab-lifted"
+            className="tab tab-lg  tab-lifted hover:text-orange-400"
           >
             Medical
           </Tab>
@@ -48,7 +66,7 @@ const ReactTab = () => {
             onClick={() => {
               handleClick("engineering_kits");
             }}
-            className="tab tab-lg  tab-lifted"
+            className="tab tab-lg  tab-lifted hover:text-orange-400"
           >
             Engineering Kit
           </Tab>

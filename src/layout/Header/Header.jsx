@@ -9,6 +9,7 @@ import { useContext } from "react";
 import NavItem from "../../components/NavItem/NavItem";
 // import Dropdown from "../../components/Dropdown/Dropdown";
 import AuthContext from "../../context/authContext";
+import logo from "../../assets/logo.png";
 
 const Header = () => {
   const { user, loading, logout } = useContext(AuthContext);
@@ -20,27 +21,37 @@ const Header = () => {
   };
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="dark" expand="lg">
       <Container>
         <Navbar.Brand>
           <Link to="/" className="text-decoration-none">
-            ToyLand
+            <img className="w-32" src={logo} alt="brand_img" />
           </Link>
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav className="align-items-center ">
-            <NavItem path={"/all-toys"}>AllToys</NavItem>
+            <NavItem className="text-white" path={"/all-toys"}>
+              AllToys
+            </NavItem>
             {user && (
               <>
                 {" "}
-                <NavItem path={"/my-toys"}>MyToys</NavItem>
-                <NavItem path={"/add-toy"}>AddToy</NavItem>
+                <NavItem className="text-white" path={"/my-toys"}>
+                  MyToys
+                </NavItem>
+                <NavItem className="text-white" path={"/add-toy"}>
+                  AddToy
+                </NavItem>
               </>
             )}
-            <NavItem path={"/blogs"}>Blogs</NavItem>
-            <NavItem path={"/about"}>About</NavItem>
+            <NavItem className="text-white" path={"/blogs"}>
+              Blogs
+            </NavItem>
+            <NavItem className="text-white" path={"/about"}>
+              About
+            </NavItem>
 
             {/* <Dropdown /> */}
             {<p>{!loading && user?.displayName}</p>}
