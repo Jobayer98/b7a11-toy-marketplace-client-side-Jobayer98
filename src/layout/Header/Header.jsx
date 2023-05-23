@@ -40,7 +40,7 @@ const Header = () => {
             </NavLink>
             <NavLink
               className={({ isActive }) => (isActive ? "active" : "")}
-              to="/add-toys"
+              to="/add-toy"
             >
               Add Toys
             </NavLink>
